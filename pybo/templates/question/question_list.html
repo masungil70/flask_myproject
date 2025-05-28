@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>질문 목록</title>
+</head>
+<body>
+<!-- 질문 목록 -->
+{% if question_list %}
+    <ul>
+    {% for question in question_list %}
+        <li>{{ loop.index }} : {{ loop.index0 }} : {{ loop.first }} : {{ loop.last }}<a href="/detail/{{ question.id }}">{{ question.subject }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>질문이 없습니다.</p>
+{% endif %}
+
+</body>
+</html>
