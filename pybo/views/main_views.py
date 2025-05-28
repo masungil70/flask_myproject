@@ -7,6 +7,11 @@ bp = Blueprint('main', __name__, url_prefix='/')
 def hello_pybo():
     return 'Hello, Pybo!'
 
+@bp.route('/detail/<int:question_id>')
+def detail(question_id):
+    question = Question.query.get(question_id)
+    return render_template('question/question_detail.html', question = question )
+
 
 @bp.route('/')
 def index():
