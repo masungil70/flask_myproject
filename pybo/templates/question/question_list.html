@@ -9,7 +9,9 @@
 {% if question_list %}
     <ul>
     {% for question in question_list %}
-        <li>{{ loop.index }} : {{ loop.index0 }} : {{ loop.first }} : {{ loop.last }}<a href="/detail/{{ question.id }}">{{ question.subject }}</a></li>
+        <li>{{ loop.index }} : {{ loop.index0 }} : {{ loop.first }} : {{ loop.last }}
+            <a href="{{ url_for('question.detail', question_id=question.id) }}">{{ question.subject }}</a>
+        </li>
     {% endfor %}
     </ul>
 {% else %}
